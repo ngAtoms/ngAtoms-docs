@@ -11,8 +11,13 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     mainFields: ['module'],
   },
+  base: '/ngatoms-docs/',
   plugins: [
-    analog(),
+    analog({
+      prerender: {
+        routes: async () => ['/'],
+      },
+    }),
   ],
   test: {
     globals: true,

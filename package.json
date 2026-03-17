@@ -11,8 +11,7 @@
     "start": "npm run dev",
     "build": "vite build",
     "watch": "vite build --watch",
-    "test": "vitest",
-    "preview": "node dist/analog/server/index.mjs"
+    "test": "vitest"
   },
   "private": true,
   "dependencies": {
