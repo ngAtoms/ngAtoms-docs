@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     mainFields: ['module'],
   },
-  base: '/ngatoms-docs/',
+  base: '/ngAtoms-docs/',
   plugins: [
     analog({
       prerender: {
