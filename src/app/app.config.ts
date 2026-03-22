@@ -1,4 +1,3 @@
-import { APP_BASE_HREF } from '@angular/common';
 import {
   provideHttpClient,
   withFetch,
@@ -9,13 +8,13 @@ import {
   provideBrowserGlobalErrorListeners,
 } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { withHashLocation } from '@angular/router';
 import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideFileRouter(),
-    { provide: APP_BASE_HREF, useValue: '/ngAtoms-docs/' },
+    provideFileRouter(withHashLocation()),
     provideHttpClient(
       withFetch(),
       withInterceptors([requestContextInterceptor])
